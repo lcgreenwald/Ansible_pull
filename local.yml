@@ -13,9 +13,9 @@
   - name: copy .bashrc file
     copy:
      src: files/bashrc
-     dest: /home/jay/.bashrc
-     owner: jay
-     group: jay
+     dest: /home/pi/.bashrc
+     owner: pi
+     group: pi
 
   - name: add ansible user
     user:
@@ -29,6 +29,13 @@
       owner: root
       group: root
       mode: 0440
+
+  - name: copy .bashrc file
+    copy:
+     src: files/bashrc
+     dest: /home/ansible/.bashrc
+     owner: ansible
+     group: ansible
 
   - name: add ansible-pull cron job
     cron:
