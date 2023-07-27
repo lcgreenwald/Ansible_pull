@@ -1,0 +1,24 @@
+[WARNING]: Could not match supplied host pattern, ignoring: Octopi
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TypeError: '<' not supported between instances of 'NoneType' and 'LooseVersion'
+localhost | FAILED! => {
+    "changed": false,
+    "module_stderr": "Traceback (most recent call last):
+      File \"/root/.ansible/tmp/ansible-tmp-1690154607.462155-10230-74408690560471/AnsiballZ_git.py\", line 102, in <module>  _ansiballz_main()
+            File \"/root/.ansible/tmp/ansible-tmp-1690154607.462155-10230-74408690560471/AnsiballZ_git.py\", line 94, in _ansiballz_main
+                invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+                  File \"/root/.ansible/tmp/ansible-tmp-1690154607.462155-10230-74408690560471/AnsiballZ_git.py\", line 40, in invoke_module
+                     runpy.run_module(mod_name='ansible.modules.git', init_globals=None, run_name='__main__', alter_sys=True)
+                      File \"/usr/lib/python3.9/runpy.py\", line 210, in run_module
+                          return _run_module_code(code, init_globals, run_name, mod_spec)
+                            File \"/usr/lib/python3.9/runpy.py\", line 97, in _run_module_code
+                                _run_code(code, mod_globals, init_globals,
+                                  File \"/usr/lib/python3.9/runpy.py\", line 87, in _run_code
+                                     exec(code, run_globals)
+                                       File \"/tmp/ansible_git_payload_iuxehxqs/ansible_git_payload.zip/ansible/modules/git.py\", line 1281, in <module>
+                                         File \"/tmp/ansible_git_payload_iuxehxqs/ansible_git_payload.zip/ansible/modules/git.py\", line 1163, in main
+                                         TypeError: '<' not supported between instances of 'NoneType' and 'LooseVersion'
+                                         ",
+    "module_stdout": "",
+    "msg": "MODULE FAILURE
+    See stdout/stderr for the exact error",
+    "rc": 1
