@@ -1,0 +1,33 @@
+  - name: copy .bashrc file
+    copy:
+     src: files/bashrc
+     dest: /home/pi/.bashrc
+     owner: pi
+     group: pi
+
+  - name: add ansible user
+    user:
+      name: ansible
+      system: yes
+
+  - name: set up sudo for ansible user
+    copy:
+      src: files/sudoer_ansible
+      dest: /etc/sudoers.d/ansible
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: copy .bashrc file
+    copy:
+     src: files/bashrc
+     dest: /home/ansible/.bashrc
+     owner: ansible
+     group: ansible
+
+  - name: add ansible-pull cron job
+    cron:
+      name: ansible auto-provision
+      user: ansible
+      minute: "*/10"
+      job: ansible-pull -o -U git@github.com:lcgreenwald/Ansible_pull.git
